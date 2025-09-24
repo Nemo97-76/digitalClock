@@ -1,0 +1,83 @@
+*{
+  margin:0;
+  padding:0;
+  cursor: default;
+  user-select: none;
+}
+.sono-body{
+  display: flex;
+width:80%;
+justify-content: space-around;
+  font-family: "Sono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "MONO" 0;
+    position: absolute;
+  top: 30rem;
+  left: 29rem;
+  flex-wrap: wrap;
+  transform: translate(-50%, -50%);
+}
+.hours,.minutes,.seconds{
+border-radius: 25px;
+font-size: 130px;
+width: 140px;
+padding: 15px;
+color: white;
+}
+.dots{
+  font-size: 130px;
+}
+.hours{
+  background-color: #ff0000;
+}
+.minutes{
+  background-color: #00ff00;
+}
+.seconds{
+  background-color: #0000ff;
+}
+.sono-BTN{
+  text-transform: capitalize;
+  position: fixed;
+  top: 40rem;
+  left: 29rem;
+  transform: translate(-50%, -50%);
+font-family: "Sono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MONO" 0;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color: #000;
+border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+.sono-BTN:hover{
+  background-color: #000000a1;
+}
+.sono-BTN:nth-child(3){
+  top: 45rem;
+}
+.AmOrPm{
+  font-size: 20px;
+}
+.sono-date{
+  font-family: "sono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "MONO" 0;
+    font-size: 20px;
+position: fixed;
+  top: 20rem;
+  left: 12rem;
+  transform: translate(-50%, -50%);
+}
