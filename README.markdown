@@ -7,19 +7,18 @@ A simple and elegant digital clock built with **React** and **Vite**. This proje
 - Responsive design for desktop and mobile devices.
 - Minimalist UI with customizable styling.
 - Built with React for component-based architecture.
-- Powered by Vite for fast development and hot module replacement (HMR).
-
+  
 ## Tech Stack
 - **React**: JavaScript library for building user interfaces.
-- **Vite**: Next-generation frontend tooling for fast builds and HMR.
+- **Vite**: Next-generation frontend tooling for fast builds.
 - **ESLint**: Configured for code quality and consistency.
 - **CSS**: For styling the clock interface.
 
 ## Getting Started
 
 ### Prerequisites
-- **Node.js** (version 16 or higher)
-- **npm** or **yarn** package manager
+- **Node.js** 
+- **npm** node package manager
 
 ### Installation
 1. Clone the repository:
@@ -34,19 +33,11 @@ A simple and elegant digital clock built with **React** and **Vite**. This proje
    ```bash
    npm install
    ```
-   or
-   ```bash
-   yarn install
-   ```
 
 ### Running the Project
 1. Start the development server:
    ```bash
    npm run dev
-   ```
-   or
-   ```bash
-   yarn dev
    ```
 2. Open your browser and visit `http://localhost:5173` to see the digital clock in action.
 
@@ -55,7 +46,6 @@ To create an optimized production build:
 ```bash
 npm run build
 ```
-The output will be in the `dist` folder, ready for deployment.
 
 ### Linting
 Run ESLint to check for code quality issues:
@@ -68,19 +58,18 @@ npm run lint
 digitalClock/
 ├── public/              # Static assets
 ├── src/                 # Source code
-│   ├── components/      # React components (e.g., Clock.jsx)
 │   ├── App.jsx          # Main App component
 │   ├── main.jsx         # Entry point
 │   ├── index.css        # Global styles
 ├── .eslintrc.cjs        # ESLint configuration
 ├── vite.config.js       # Vite configuration
 ├── package.json         # Project dependencies and scripts
-└── README.md            # This file
+└── README.markdown            # This file
 ```
 
 ## Customization
 - **Styling**: Modify `src/index.css` or component-specific CSS to change the clock's appearance (e.g., fonts, colors, or animations).
-- **Functionality**: Extend the `Clock` component in `src/components/` to add features like 12/24-hour format toggle or timezone support.
+- **Functionality**:Modify the `App.jsx` file in `src/` to add features like 12/24-hour format toggle etc.
 
 ## ESLint Configuration
 This project uses ESLint for code quality. To extend the configuration (e.g., for TypeScript):
@@ -98,9 +87,10 @@ Contributions are welcome! To contribute:
 4. Push to the branch (`git push origin feature/your-feature`).
 5. Open a pull request.
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## Live Demo
+to view Demo : <a href="https://digitalcolock.netlify.app/">Demo</a>
 
-## Acknowledgments
-- Built with [React](https://reactjs.org/) and [Vite](https://vitejs.dev/).
-- Inspired by minimalist web design principles.
+## Contact
+- **GitHub**: [Nemo97-76](https://github.com/Nemo97-76)
+- **Email**: tasneemyoussef61@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/tasneem-youssef-770708278
