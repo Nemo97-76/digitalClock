@@ -1,56 +1,54 @@
-import { useState ,useEffect} from 'react'
+import React ,{useEffect,useState} from "react";
 import './index.css'
+const App=()=>{
+  const hours=new Date().getHours();
+  const mins=new Date().getMinutes();
+  const secs=new Date().getSeconds();
+  const day=new Date().getDay();
+const month= new Date().getMonth()
+const year= new Date().getFullYear()
 
-function App() {
+const [secsDisplay,setSecsDisplay]=useState(false);
+  const [time,setTime]=useState(new Date())
+  const [is24HoursFormat,setis24HoursFormat]=useState(true);
 
-const [time, setTime] = useState(new Date().getDate())
-const [isSecVisible, setIsSecVisible] = useState(true)
-const [is24HourFormat, setIs24HourFormat] = useState(false)
-useEffect(()=>{
-const timer = setInterval(() => {
-  setTime(new Date())
-},1000)
-return () => clearInterval(timer)
-},[])
-var hours = new Date().getHours()
-var minutes = new Date().getMinutes()
-var seconds = new Date().getSeconds()
-var day= new Date().getDay()
 const DaysArr=["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"]
 const MonthsArr=["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-const month= new Date().getMonth()
-return (
-    <>
-    <div className='sono-date'>
-    {DaysArr[day]+ "," + new Date().getDate() + " " + MonthsArr[month]+ " "+ new Date().getFullYear()}
-   </div>
-    <div className="sono-body">
-<div className='hours'>
-{  ((!is24HourFormat&&hours>12)?setHours(hours-12):hours)||hours<10?'0'+ hours:hours
-}
-  </div>
-  <div className='dots'>:</div>
-   <div className='minutes'>
-{minutes==0?'00':minutes<10?`0${minutes}`:minutes}
-  </div>
-{isSecVisible && 
-<>
-<div className='dots'>:</div>
-<div className='seconds'>
-{seconds==0?'00':seconds<10?`0${seconds}`:seconds}
-   </div>
-</>
-}
-{!is24HourFormat && <div className='AmOrPm'>{hours>12?"pm":"am"}</div>
-}
-  </div> 
-      <button className='sono-BTN' onClick={()=>setIsSecVisible(!isSecVisible)}>{isSecVisible?"hide seconds":"view seconds"}</button>
-  <button className='sono-BTN' onClick={()=>setIs24HourFormat(!is24HourFormat)}>{is24HourFormat?"12 hours format":"24 hours format"}</button>
-   
-   
-    </>
-  
-      )
-}
 
+useEffect(()=>{
+  const timer=setInterval(()=>{
+    setTime(new Date())
+  },1000)
+  return()=>clearInterval(timer)
+},[])
+const HandleHours=(hours)=>{
+return !is24HoursFormat ? (hours < 10 ? `0${hours}` : hours) : (hours > 12 ? hours - 12 : (hours < 10 ? `0${hours}` : hours));
+}
+  return(
+    <>
+    <div className="app">
+      <div className="container">
+        <div className="date">{DaysArr[day]+ "," + day + " " + MonthsArr[month]+ " "+ year}
+<div className="AmOrPm">
+  {is24HoursFormat?(hours>=12?"PM":"AM"):""}
+</div>
+
+        </div>
+<div className="clock">
+  <div className="Hours numbers">{HandleHours(hours)}</div>
+<div className="colon">:</div>
+<div className="mins numbers">{mins==0?'00':mins<10?`0${mins}`:mins}</div>
+<div className={secsDisplay?"colon":"hideSec"} >:</div>
+<div className={secsDisplay?"secs numbers":"hideSec"}>{secs==0?'00':secs<10?`0${secs}`:secs}</div>
+</div>
+<div className="buttons">
+<button className="btn" id="secs" onClick={()=>setSecsDisplay(!secsDisplay)}>{secsDisplay?"hide":"view"}secs</button>
+  <button className="btn" onClick={()=>setis24HoursFormat(!is24HoursFormat)}>{is24HoursFormat?"24 hours system":"12 hours system"}</button>
+</div>
+
+      </div>
+    </div>
+    </>
+  )
+}
 export default App
